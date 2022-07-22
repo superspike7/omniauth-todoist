@@ -41,7 +41,7 @@ module OmniAuth
       def raw_info
         access_token.options[:mode] = :query
         params = { token: access_token.token, sync_token: "*", resource_types: '["user"]' }
-        @raw_info ||= access_token.get("/API/v7/sync", params: params).parsed
+        @raw_info ||= access_token.get("/sync/v8/sync", params: params).parsed
       end
     end
   end
